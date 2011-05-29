@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Bakalavrat</title>
+    </h:head>
+    <h:body>
+        <!--        <h:form>
+                    <p:commandButton value="Hello from PrimeFaces" onclick="dlg1.show();" type="button" />
+                    <p:dialog header="PrimeFaces Dialog" widgetVar="dlg1" width="500">For more information visit <a href="http://primefaces.org">http://primefaces.org</a>.</p:dialog>
+                </h:form>-->
+
+        <h:form>  
+            <p:dataTable var="item" value="#{courseController.searchResult}">  
+                <p:column>  
+                    <f:facet name="header">  
+                        Id  
+                    </f:facet>  
+                    <h:outputText value="#{item.id}" />  
+                </p:column>  
+
+                <p:column>  
+                    <f:facet name="header">  
+                        Name  
+                    </f:facet>  
+                    <h:outputText value="#{item.name}" />  
+                </p:column>  
+
+                <p:column>  
+                    <f:facet name="header">  
+                        Abbr  
+                    </f:facet>  
+                    <h:outputText value="#{item.abbr}" />  
+                </p:column>  
+
+                <p:column>  
+                    <f:facet name="header">  
+                        Code  
+                    </f:facet>  
+                    <h:outputText value="#{item.code}" />  
+                </p:column>  
+                
+                 <p:column>  
+                    <f:facet name="header">  
+                        list
+                    </f:facet>  
+                     <h:outputText value="#{item.curriculumCourseList.get(0).laboratoryClassHours}" />  
+                </p:column>  
+            </p:dataTable>  
+        </h:form>  
+
+
+
+    </h:body>
+
+
+
+</html>
+
